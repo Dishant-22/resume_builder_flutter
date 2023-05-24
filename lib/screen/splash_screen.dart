@@ -10,9 +10,14 @@ class SplashScreen extends StatelessWidget {
     return GetBuilder<SplashController>(
         init: SplashController(),
         builder: (controller) {
-          return const SafeArea(
-            child: Center(
-              child: FlutterLogo(),
+          return const Scaffold(
+            backgroundColor: Colors.white,
+            body:  SafeArea(
+              child: Center(
+                child: FlutterLogo(
+                  size: 75,
+                ),
+              ),
             ),
           );
         });
