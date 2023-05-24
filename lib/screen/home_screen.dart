@@ -15,7 +15,7 @@ class HomeScreen extends GetView<HomeController> {
         title: const Text("Resume Details"),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: controller.setResumeDataModel,
             icon: const Icon(Icons.remove_red_eye),
           )
         ],
@@ -187,13 +187,19 @@ class HomeScreen extends GetView<HomeController> {
                             LabelTextField(
                               label: "School Name",
                               controller: TextEditingController(),
-                              onChanged: (p0) {},
+                              onChanged: (p0) {
+                                controller.educationDetailsList[index].schoolName = p0;
+                                controller.update();
+                              },
                             ),
                             const SizedBox(height: 5),
                             LabelTextField(
                               label: "Course Name",
                               controller: TextEditingController(),
-                              onChanged: (p0) {},
+                              onChanged: (p0) {
+                                controller.educationDetailsList[index].courseName = p0;
+                                controller.update();
+                              },
                             ),
                             const SizedBox(height: 5),
                             Row(
@@ -202,7 +208,10 @@ class HomeScreen extends GetView<HomeController> {
                                   child: LabelTextField(
                                     label: "Passing Year",
                                     controller: TextEditingController(),
-                                    onChanged: (p0) {},
+                                    onChanged: (p0) {
+                                      controller.educationDetailsList[index].passingYear = p0;
+                                      controller.update();
+                                    },
                                   ),
                                 ),
                                 const SizedBox(width: 10),
@@ -210,7 +219,10 @@ class HomeScreen extends GetView<HomeController> {
                                   child: LabelTextField(
                                     label: "Percentage",
                                     controller: TextEditingController(),
-                                    onChanged: (p0) {},
+                                    onChanged: (p0) {
+                                      controller.educationDetailsList[index].percentage = double.tryParse(p0);
+                                      controller.update();
+                                    },
                                   ),
                                 ),
                               ],
