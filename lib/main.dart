@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Zexal',
+      title: 'Resume Builder',
       themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
       initialBinding: GlobalScreenBindings(),
